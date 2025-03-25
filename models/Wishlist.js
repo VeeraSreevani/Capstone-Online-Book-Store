@@ -27,6 +27,6 @@ const wishlistSchema = new mongoose.Schema({
 },
 {
     timestamps:true
-}
-)
+})
+wishlistSchema.index({userId:1,bookId:1})
 export default mongoose.model('Wishlist',wishlistSchema)

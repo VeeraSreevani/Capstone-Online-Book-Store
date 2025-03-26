@@ -81,4 +81,34 @@ userRouter.delete('/:id', async(req,res)=>{
   }
 });
 
+//! POST login route
+userRouter.post("/login", async (req, res) => {
+  try {
+    const { email, password } = req.body;
+
+    // Check if email and password are provided
+    if (!email || !password) {
+      return res.status(400).json({ message: "Email and password are required" });
+    }
+
+    // Find user by email
+    const user = await User.findOne({ email });
+
+    if (!user) {
+      return res.status(400).json({ message: "Invalid email or password" });
+    }
+
+    // Compare the entered password with the stored password (plain text check)
+    if (user.password !== password) {
+      return res.status(400).json({ message: "Invalid email or password" });
+    }
+
+    // Return success if credentials are correct
+    res.json({ success: true, message: "Login successful", userId: user._id });
+
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: "Server error" });
+  }
+});
 export default userRouter;

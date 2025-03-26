@@ -87,7 +87,7 @@ export default wishlistRouter;
 // });
 
 // PATCH update a wishlist item
-wishlistRouter.patch('/:id', async (req, res) => {
+wishlistRouter.patch('/:userId/:bookId', async (req, res) => {
   try {
     const updates = req.body;
     const wishlistItem = await Wishlist.findByIdAndUpdate(req.params.id, updates, { new: true });

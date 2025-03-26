@@ -48,7 +48,7 @@ wishlistRouter.get('/:userId', async (req, res) => {
 });
 
 //! DELETE delete a wishlist item
-wishlistRouter.delete('/:userId/:booId', async (req, res) => {
+wishlistRouter.delete('/:userId/:bookId', async (req, res) => {
   try {
     const { userId, bookId } = req.params;
 
@@ -86,17 +86,17 @@ export default wishlistRouter;
 //   }
 // });
 
-// // PATCH update a wishlist item
-// wishlistRouter.patch('/:id', async (req, res) => {
-//   try {
-//     const updates = req.body;
-//     const wishlistItem = await Wishlist.findByIdAndUpdate(req.params.id, updates, { new: true });
-//     if (!wishlistItem) {
-//       return res.status(404).json({ message: 'Wishlist item not found' });
-//     }
-//     res.json(wishlistItem);
-//     } catch (error) {
-//     console.error(error);
-//     res.status(500).json({ message: 'Error updating wishlist item' });
-//     }   
-// });
+// PATCH update a wishlist item
+wishlistRouter.patch('/:id', async (req, res) => {
+  try {
+    const updates = req.body;
+    const wishlistItem = await Wishlist.findByIdAndUpdate(req.params.id, updates, { new: true });
+    if (!wishlistItem) {
+      return res.status(404).json({ message: 'Wishlist item not found' });
+    }
+    res.json(wishlistItem);
+    } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: 'Error updating wishlist item' });
+    }   
+});

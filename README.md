@@ -36,9 +36,11 @@ Using GoogleBooksApi for fetching the books data
 
 ## Future Enhancements
 
-- Implementing advanced search and filtering for books.
 - Adding support for payment gateways.
 - Enhancing order tracking and notifications.
-- Building a recommendation system for users.
-- Adding unit and integration tests for better reliability.
+- Building a review/recommendation system for users.
 
+
+## BOOKS:
+# GET: https://www.googleapis.com/books/v1/volumes?q=harry+potter
+# POST : http://localhost:4000/api/books

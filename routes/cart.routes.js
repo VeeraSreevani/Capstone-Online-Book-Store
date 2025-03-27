@@ -3,7 +3,7 @@ import Cart from '../models/Cart.js';
 
 const cartRouter = express.Router();
 
-//! POST create a new cart
+//! POST create a new cart()
 cartRouter.post('/', async (req, res) => {
   try {
     const { userId, bookId, quantity = 1 } = req.body;

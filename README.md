@@ -6,6 +6,9 @@ https://github.com/VeeraSreevani/Capstone-Online-Book-Store
 ## Jira link to track the Project 
 https://sreevaniveera.atlassian.net/jira/software/projects/BOOK/boards/2
 
+## Deployment Link 
+https://capstone-online-book-store.onrender.com
+
 ## Instructions
 
 1. Clone the repo `git clone <repo-url> <new-project-name>`

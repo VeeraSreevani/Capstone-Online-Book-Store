@@ -1,5 +1,10 @@
 # Backend API Template
 
+## Git Repo link for backend:
+https://github.com/VeeraSreevani/Capstone-Online-Book-Store
+
+## Jira link to track the Project 
+https://sreevaniveera.atlassian.net/jira/software/projects/BOOK/boards/2
 
 ## Instructions
 
@@ -37,5 +42,3 @@ Using GoogleBooksApi for fetching the books data
 - Building a recommendation system for users.
 - Adding unit and integration tests for better reliability.
 
-## Git Repo link for backend:
-https://github.com/VeeraSreevani/Capstone-Online-Book-Store

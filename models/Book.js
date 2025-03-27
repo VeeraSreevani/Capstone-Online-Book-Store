@@ -20,7 +20,7 @@ const bookSchema = new mongoose.Schema({
     },
     category:{
         type: String,   //fiction, non-fiction
-        required: true
+        // required: true
     },
     publishedDate:{
         type: String,

@@ -8,11 +8,19 @@ const wishlistSchema = new mongoose.Schema({
     },
     wishlistItems:[
         {
-            bookId:{
+            book_id:{
                 type:String,//book api id
                 ref:'Book',
+                // required:true
+            },
+            bookId:{
+                type:String,
                 required:true
             },
+            // title:{
+            //     type:String,
+            //     required:true
+            // }
             // authors:{
             //     type:[String],
             //     required:true

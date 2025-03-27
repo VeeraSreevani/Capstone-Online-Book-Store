@@ -16,9 +16,9 @@ const userSchema = new mongoose.Schema(
     password: {
       type: String,
       // required:true,
-      minlength: 8, 
-      maxlength: 20,
-      match: /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,20}$/,
+      // minlength: 8, 
+      // maxlength: 20,
+      // match: /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,20}$/,
      
     }
     // cart:{

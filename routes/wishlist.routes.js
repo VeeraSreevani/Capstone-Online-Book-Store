@@ -1,11 +1,13 @@
 import express from 'express';
 import Wishlist from '../models/Wishlist.js';
+import Book from '../models/Book.js';
 
 const wishlistRouter = express.Router();
 
 //! POST create a new wishlist
 wishlistRouter.post("/", async (req, res) => {
   try {
+    console.log(req.body);
     const { userId, bookId, title, authors, thumbnail } = req.body;
 
     // Check if the user already has a wishlist
@@ -20,9 +22,18 @@ wishlistRouter.post("/", async (req, res) => {
     const bookExists = wishlist.wishlistItems.some((item) => item.bookId === bookId);
 
     if (!bookExists) {
-      wishlist.wishlistItems.push({ bookId, title, authors, thumbnail });
+      console.log(userId, bookId, title, authors, thumbnail);
+      const book= new Book({bookId, title, authors, thumbnail});
+      await book.save();
+
+      wishlist.wishlistItems.push({book_id: book._id,bookId});
       await wishlist.save();
-      return res.status(201).json({ message: "Book added to wishlist", wishlist });
+      const populatedWishlist = await wishlist.populate({
+        path:'wishlistItems.book_id',
+        model:'Book'
+      }) 
+
+      return res.status(201).json({ message: "Book added to wishlist", wishlist: populatedWishlist });
     }
 
     res.status(400).json({ message: "Book is already in the wishlist" });

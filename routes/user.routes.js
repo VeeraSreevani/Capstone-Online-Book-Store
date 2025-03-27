@@ -53,6 +53,7 @@ userRouter.get('/:id', async(req, res) => {
     }
 });
 
+//! PATCH -Update a user
 userRouter.patch('/:id', async(req,res)=>{
   try {
     const updates =req.body;
@@ -68,6 +69,7 @@ userRouter.patch('/:id', async(req,res)=>{
   }
 });
 
+//!Delete a user
 userRouter.delete('/:id', async(req,res)=>{
   try{
     const user = await User.findByIdAndDelete(req.params.id);

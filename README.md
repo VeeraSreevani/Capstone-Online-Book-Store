@@ -40,7 +40,27 @@ Using GoogleBooksApi for fetching the books data
 - Enhancing order tracking and notifications.
 - Building a review/recommendation system for users.
 
-
+### API Routes
 ## BOOKS:
-# GET: https://www.googleapis.com/books/v1/volumes?q=harry+potter
-# POST : http://localhost:4000/api/books
+    GET: https://www.googleapis.com/books/v1/volumes?q=harry+potter
+    POST : http://localhost:4000/api/books
+    PATCH: http://localhost:4000/api/books/bookId
+    DELETE: http://localhost:4000/api/books/booksId
+## USER:
+    GET: http://localhost:4000/api/user
+    GET: http://localhost:4000/api/user/userId //for specific user
+    POST : http://localhost:4000/api/user
+    PATCH: http://localhost:4000/api/user/:userId
+    DELETE: http://localhost:4000/api/user/:userId
+## WISHLIST:
+    GET: http://localhost:4000/api/wishlist/userId
+    POST : http://localhost:4000/api/wishlist
+    PATCH: http://localhost:4000/api/user/:userId/:bookId
+    DELETE: http://localhost:4000/api/user/:userId/:bookId
+## CART:
+    GET: http://localhost:4000/api/cart/userId
+    POST : http://localhost:4000/api/cart
+    PATCH: http://localhost:4000/api/cart/:userId/item/:bookId
+    DELETE: http://localhost:4000/api/cart/:userId/item/:bookId
+
+
